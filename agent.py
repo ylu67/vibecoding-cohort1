@@ -4,6 +4,7 @@ import subprocess
 from typing import Iterator
 
 from llm import client
+from backend.tools import TOOL_DEFINITIONS, TOOL_FUNCTIONS
 
 AGENT_WORKSPACE = "/tmp/agent_workspace"
 
@@ -54,7 +55,7 @@ TOOLS = [
             },
         },
     },
-]
+] + TOOL_DEFINITIONS
 
 
 def _terminal(command: str) -> str:
@@ -100,6 +101,7 @@ _TOOL_MAP = {
     "terminal": lambda a: _terminal(a["command"]),
     "dosya_oku": lambda a: _dosya_oku(a["yol"]),
     "dosya_yaz": lambda a: _dosya_yaz(a["yol"], a["icerik"]),
+    **TOOL_FUNCTIONS,
 }
 
 

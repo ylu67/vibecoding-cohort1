@@ -20,6 +20,12 @@ komutunu çalıştırarak gerekli tüm bağımlılıkları yükleyebilirsiniz.
 
 Proje, arka planda `app.py`, `agent.py`, `asistan.py` ve `llm.py` Python dosyaları ve ön yüzde `frontend` klasöründeki HTML dosyaları ile çalışmaktadır. Her bir bileşen spesifik işlemler için tasarlanmıştır.
 
+## Araçlar
+
+### `count_words` (Kelime Sayacı)
+
+`backend/tools/count_words.py` içinde tanımlanan `count_words` aracı, kullanıcının verdiği metindeki kelime sayısını hesaplar. Agent sayfasında model bu araca erişebilir; "Şu metindeki kaç kelime var?" gibi sorularda otomatik olarak çağrılır ve sonucu döner.
+
 ## Katkıda Bulunma
 
 Katkıda bulunmak isteyenler standart bir pull request süreci üzerinden projeye katkıda bulunabilirler.
